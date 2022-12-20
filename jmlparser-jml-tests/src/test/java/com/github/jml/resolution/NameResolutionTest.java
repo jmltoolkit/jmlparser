@@ -32,78 +32,14 @@ import java.util.stream.Collectors;
  * @version 1 (02.07.22)
  */
 class NameResolutionTest {
-    /*ClassOrInterfaceDeclaration declaration;
-    {
-        try {
-            final ParserConfiguration configuration = new ParserConfiguration().setProcessJml(true);
-            configuration.setSymbolResolver(new JavaSymbolSolver(new ClassLoaderTypeSolver(ClassLoader.getSystemClassLoader())));
-            JavaParser parser = new JavaParser(configuration);
-            ParseResult<CompilationUnit> cu = parser.parse(new File("src/test/resources/com/github/jml/resolution/ResolutionTest.java"));
-            if (!cu.isSuccessful()) {
-                for (Problem problem : cu.getProblems()) {
-                    System.out.println(problem);
-                }
-                Assumptions.assumeTrue(false);
-            }
-            declaration = (ClassOrInterfaceDeclaration) cu.getResult().get().getPrimaryType().get();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    */
     @Test
     void contractMemberVariable() throws IOException {
         loadAndResolveAll("ResolutionTest.java");
-        /*JmlContract contract = declaration.getMethodsByName("foo").get(0).getContracts().get().get(0);
-        JmlForallClause forall = (JmlForallClause) contract.getClauses().get(0);
-        JmlSimpleExprClause ensures1 = (JmlSimpleExprClause) contract.getClauses().get(1);
-        JmlSimpleExprClause ensures2 = (JmlSimpleExprClause) contract.getClauses().get(2);
-        JmlSimpleExprClause ensures3 = (JmlSimpleExprClause) contract.getClauses().get(3);
-        JmlSignalsClause signals = (JmlSignalsClause) contract.getClauses().get(4);
-        {
-            Expression e = ensures1.getExpression();
+    }
 
-            ResolvedType type = e.calculateResolvedType();
-            System.out.println(type);
-
-            NameExpr n = (NameExpr) ((BinaryExpr) e).getLeft();
-            System.out.println(n.calculateResolvedType());
-            System.out.println(n.resolve());
-        }
-
-        {
-            Expression e = ensures2.getExpression();
-
-            ResolvedType type = e.calculateResolvedType();
-            System.out.println(type);
-
-            NameExpr n = (NameExpr) ((BinaryExpr) e).getLeft();
-            System.out.println(n.resolve());
-            System.out.println(n.calculateResolvedType());
-        }
-
-        {
-            Expression e = ensures3.getExpression();
-
-            ResolvedType type = e.calculateResolvedType();
-            System.out.println(type);
-
-            NameExpr n = (NameExpr) ((BinaryExpr) e).getLeft();
-            System.out.println(n.calculateResolvedType());
-            System.out.println(n.resolve());
-        }
-
-        {
-            Expression e = signals.getExpression();
-
-            ResolvedType type = e.calculateResolvedType();
-            System.out.println(type);
-
-            NameExpr n = (NameExpr) ((BinaryExpr) e).getLeft();
-            System.out.println(n.calculateResolvedType());
-            System.out.println(n.resolve());
-        }
-         */
+    @Test
+    void complete() throws IOException {
+        loadAndResolveAll("CompleteResolutionExample.java");
     }
 
 

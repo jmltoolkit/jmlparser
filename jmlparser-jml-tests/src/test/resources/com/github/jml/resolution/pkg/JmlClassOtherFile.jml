@@ -1,0 +1,9 @@
+public model class JmlClassOtherFile {
+    int field;
+
+
+    /*@ requires x > 0; ensures x >0; */
+    int foo(int x);
+
+
+}

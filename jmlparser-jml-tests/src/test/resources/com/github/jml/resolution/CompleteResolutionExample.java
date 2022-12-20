@@ -1,3 +1,5 @@
+//@ import pkg.JmlClassOtherFile;
+
 public class CompleteResolutionExample {
     int x;
     int y;
@@ -12,6 +14,10 @@ public class CompleteResolutionExample {
         /*@ ghost boolean Q = next //!ref: faNext
                                 !=null;
          */
+
+         //@ghost int f = other.field;
+         //@ghost int g = f  + clazz.field;
+         //@ghost int h = g + f + clazz.other.field + clazz.x;
     }
 
     /*@
@@ -24,4 +30,19 @@ public class CompleteResolutionExample {
                                         x //!ref:bindX2
                                         > 0; 1));
      */
+
+
+    /*@ model class JmlInnerClass {} */
+    //@ ghost JmlClassSameFile clazz = new JmlClassSameFile();    
+    //@ ghost JmlClassOtherFile other = new JmlClassOtherFile();    
+
+    
 }
+
+/*@
+    public model class JmlClassSameFile extends JmlClassOtherFile {
+        int x;       
+        JmlClassOtherFile other;
+        JmlClassSameFile self = new JmlClassSameFile();
+    }
+ */
