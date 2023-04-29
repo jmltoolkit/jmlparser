@@ -51,9 +51,11 @@ import com.github.javaparser.printer.configuration.DefaultPrinterConfiguration.C
 import com.github.javaparser.printer.configuration.ImportOrderingStrategy;
 import com.github.javaparser.printer.configuration.PrinterConfiguration;
 import com.github.javaparser.printer.configuration.imports.DefaultImportOrderingStrategy;
+
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Pattern;
+
 import static com.github.javaparser.ast.Node.Parsedness.UNPARSABLE;
 import static com.github.javaparser.utils.PositionUtils.sortByBeginPosition;
 import static com.github.javaparser.utils.Utils.*;
@@ -96,7 +98,7 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
         }
     }
 
-    private boolean inJmlComment() {
+    protected boolean inJmlComment() {
         return inJmlMultiComment || inJmlSingleComment;
     }
 
@@ -742,11 +744,11 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
         n.getName().accept(this, arg);
     }
 
-    private <T extends Node> void printList(NodeList<T> args, String sep) {
+    protected <T extends Node> void printList(NodeList<T> args, String sep) {
         printList(args, sep, "", "", "", "");
     }
 
-    private <T extends Node> void printList(NodeList<T> args, String sep, String delimStart, String delimEnd, String eachStart, String eachEnd) {
+    protected <T extends Node> void printList(NodeList<T> args, String sep, String delimStart, String delimEnd, String eachStart, String eachEnd) {
         if (!isNullOrEmpty(args)) {
             printer.print(delimStart);
             for (final Iterator<T> i = args.iterator(); i.hasNext(); ) {
@@ -794,7 +796,7 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
         printer.print(";");
     }
 
-    private void printClause(JmlClauseKind kind, SimpleName label, Expression expr) {
+    protected void printClause(JmlClauseKind kind, SimpleName label, Expression expr) {
         printer.print(kind.jmlSymbol);
         printer.print(" (");
         label.accept(this, null);
@@ -803,7 +805,7 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
         printer.print(";");
     }
 
-    private void printClause(JmlClauseKind name, Expression expr) {
+    protected void printClause(JmlClauseKind name, Expression expr) {
         printClause(name, new NodeList<>(), expr);
     }
 
@@ -822,15 +824,9 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
         printOrphanCommentsBeforeThisChildNode(n);
         printer.print("(");
         switch (n.getKind()) {
-            case NEUTRAL:
-                printer.print("\\lbl");
-                break;
-            case POSITIVE:
-                printer.print("\\lblpos");
-                break;
-            case NEGATIVE:
-                printer.print("\\lblneg");
-                break;
+            case NEUTRAL -> printer.print("\\lbl");
+            case POSITIVE -> printer.print("\\lblpos");
+            case NEGATIVE -> printer.print("\\lblneg");
         }
         n.getLabel().accept(this, arg);
         printer.print(" : ");
@@ -882,12 +878,10 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
     @Override
     public void visit(JmlUnreachableStmt n, Void arg) {
         printOrphanCommentsBeforeThisChildNode(n);
-        wrapInJmlIfNeeded(() -> {
-            printer.println("unreachable;");
-        });
+        wrapInJmlIfNeeded(() -> printer.println("unreachable;"));
     }
 
-    void wrapInJmlIfNeeded(Runnable run) {
+    protected void wrapInJmlIfNeeded(Runnable run) {
         boolean b = inJmlComment();
         if (!b) {
             startJmlComment(true, new NodeList<>());
@@ -926,9 +920,7 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
     @Override
     public void visit(JmlRefiningStmt n, Void arg) {
         printOrphanCommentsBeforeThisChildNode(n);
-        wrapInJmlIfNeeded(() -> {
-            printer.print("refining");
-        });
+        wrapInJmlIfNeeded(() -> printer.print("refining"));
         //TODO weigl
     }
 
@@ -997,7 +989,7 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
         endJmlComment();
     }
 
-    private void endJmlComment() {
+    protected void endJmlComment() {
         assert inJmlComment() && inJmlSingleComment != inJmlMultiComment;
         if (inJmlSingleComment) {
             printer.print("");
@@ -1007,7 +999,7 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
         inJmlSingleComment = inJmlMultiComment = false;
     }
 
-    private void startJmlComment(boolean singleLine, NodeList<SimpleName> jmlTags) {
+    protected void startJmlComment(boolean singleLine, NodeList<SimpleName> jmlTags) {
         if (singleLine) {
             inJmlSingleComment = true;
             printer.print("//");
@@ -1628,7 +1620,7 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
         printSwitchNode(n, arg);
     }
 
-    private void printSwitchNode(SwitchNode n, Void arg) {
+    protected void printSwitchNode(SwitchNode n, Void arg) {
         printComment(n.getComment(), arg);
         printer.print("switch(");
         n.getSelector().accept(this, arg);
@@ -2211,7 +2203,7 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
         printer.print("???;");
     }
 
-    private void printImports(NodeList<ImportDeclaration> imports, Void arg) {
+    protected void printImports(NodeList<ImportDeclaration> imports, Void arg) {
         ImportOrderingStrategy strategy = new DefaultImportOrderingStrategy();
         // Get Import strategy from configuration
         Optional<ConfigurationOption> optionalStrategy = getOption(ConfigOption.SORT_IMPORTS_STRATEGY);
@@ -2236,11 +2228,11 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
         }
     }
 
-    private void printClause(JmlClauseKind name, NodeList<SimpleName> heaps, Expression expr) {
+    protected void printClause(JmlClauseKind name, NodeList<SimpleName> heaps, Expression expr) {
         printClause(name, heaps, new NodeList<>(expr));
     }
 
-    private void printClause(JmlClauseKind name, NodeList<SimpleName> heaps, NodeList<Expression> expr) {
+    protected void printClause(JmlClauseKind name, NodeList<SimpleName> heaps, NodeList<Expression> expr) {
         if (name == null)
             printer.print("/*ERROR name not set*/");
         else
@@ -2251,7 +2243,7 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
         printer.println(";");
     }
 
-    private void printOrphanCommentsBeforeThisChildNode(final Node node) {
+    protected void printOrphanCommentsBeforeThisChildNode(final Node node) {
         if (!getOption(ConfigOption.PRINT_COMMENTS).isPresent())
             return;
         if (node instanceof Comment)
@@ -2307,17 +2299,17 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
         }
     }
 
-    private void indentIf(boolean expr) {
+    protected void indentIf(boolean expr) {
         if (expr)
             printer.indent();
     }
 
-    private void unindentIf(boolean expr) {
+    protected void unindentIf(boolean expr) {
         if (expr)
             printer.unindent();
     }
 
-    private Optional<ConfigurationOption> getOption(ConfigOption cOption) {
+    protected Optional<ConfigurationOption> getOption(ConfigOption cOption) {
         return configuration.get(new DefaultConfigurationOption(cOption));
     }
 }

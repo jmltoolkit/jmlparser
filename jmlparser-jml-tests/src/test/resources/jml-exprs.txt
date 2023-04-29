@@ -1,4 +1,7 @@
-true
-false
-(\forall int i, j; true)
-(\forall int i, j; i >= 0 && i < ar.length && j >= 0 && j < ar.length; ar[i][j] == ar[j][i])
+true ° BooleanLiteralExpr
+false ° BooleanLiteralExpr
+(\forall int i, j; true) ° JmlQuantifiedExpr
+(\forall int i, j; i >= 0 && i < ar.length && j >= 0 && j < ar.length; ar[i][j] == ar[j][i]) ° JmlQuantifiedExpr
+1 .. 2 ° BinaryExpr
+1..a ° BinaryExpr
+x..y ° BinaryExpr

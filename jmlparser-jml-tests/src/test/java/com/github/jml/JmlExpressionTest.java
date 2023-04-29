@@ -15,13 +15,16 @@ class JmlExpressionTest {
     private JavaParser javaParser = new JavaParser();
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/jml-exprs.txt", delimiterString = "FOOBARBAZ")
-    void parse(String input) {
+    @CsvFileSource(resources = "/jml-exprs.txt", delimiterString = "°")
+    void parse(String input, String typeName) {
         ParseResult<Expression> r = javaParser.parseJmlExpression(input);
         if (!r.isSuccessful()) {
             r.getProblems().forEach(System.out::println);
         }
+
         Assertions.assertTrue(r.isSuccessful());
+        Assertions.assertEquals(typeName, r.getResult().get().getMetaModel().getTypeName());
+        System.out.println();
     }
 
 }
