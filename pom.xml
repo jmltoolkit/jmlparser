@@ -153,7 +153,7 @@
 			${project.basedir}/jmlparser-jml-tests/target/site/jacoco/jacoco.xml,
 			${project.basedir}/javaparser-core-testing-bdd/target/site/jacoco/jacoco.xml,
 		</sonar.coverage.jacoco.xmlReportPaths>
-		<byte-buddy.version>1.14.14</byte-buddy.version>
+		<byte-buddy.version>1.14.15</byte-buddy.version>
         <argLine>-javaagent:${settings.localRepository}/net/bytebuddy/byte-buddy-agent/${byte-buddy.version}/byte-buddy-agent-${byte-buddy.version}.jar</argLine>
 		<build.timestamp>2024-04-04T00:00:00Z</build.timestamp>
         <!-- Maven Plugins -->
