@@ -936,10 +936,13 @@ public class DefaultPrettyPrinterVisitor implements VoidVisitor<Void> {
     @Override
     public void visit(JmlClassExprDeclaration n, Void arg) {
         printOrphanCommentsBeforeThisChildNode(n);
+        boolean openedJml = inJmlComment();
+        if (!openedJml) startJmlComment(false, n.getJmlTags());
         printModifiers(n.getModifiers());
         printer.print("invariant ");
         n.getInvariant().accept(this, arg);
         printer.print(";");
+        if (!openedJml) endJmlComment();
     }
 
     @Override
