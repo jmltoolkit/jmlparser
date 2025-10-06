@@ -28,6 +28,10 @@
 		</license>
 	</licenses>
 
+	<properties>
+		<build.timestamp>${maven.build.timestamp}</build.timestamp>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>io.github.jmltoolkit</groupId>

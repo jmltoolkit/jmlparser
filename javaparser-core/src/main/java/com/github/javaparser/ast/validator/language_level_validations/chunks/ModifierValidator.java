@@ -33,6 +33,7 @@ import com.github.javaparser.ast.nodeTypes.NodeWithTokenRange;
 import com.github.javaparser.ast.stmt.CatchClause;
 import com.github.javaparser.ast.validator.ProblemReporter;
 import com.github.javaparser.ast.validator.VisitorValidator;
+import com.github.javaparser.ast.jml.body.JmlFieldDeclaration;
 import com.github.javaparser.utils.SeparatedItemStringBuilder;
 import java.util.ArrayList;
 import java.util.List;
@@ -125,6 +126,13 @@ public class ModifierValidator extends VisitorValidator {
     }
 
     @Override
+     public void visit(JmlFieldDeclaration n, ProblemReporter reporter) {
+       //Adds model, ghost, and instance to the allowed modifiers
+        validateModifiers(n.getDecl(), reporter, PUBLIC, PROTECTED, PRIVATE, STATIC, FINAL, TRANSIENT, VOLATILE, JML_GHOST, JML_MODEL, JML_INSTANCE);
+        super.visit(n.getDecl(), reporter);
+     }
+
+    @Override
     public void visit(FieldDeclaration n, ProblemReporter reporter) {
         validateModifiers(
                 n, reporter, PUBLIC, PROTECTED, PRIVATE, STATIC, FINAL, TRANSIENT, VOLATILE, JML_GHOST, JML_MODEL);
@@ -208,6 +216,8 @@ public class ModifierValidator extends VisitorValidator {
             T n, ProblemReporter reporter, Modifier.Keyword... allowedModifiers) {
         validateAtMostOneOf(n, reporter, PUBLIC, PROTECTED, PRIVATE);
         validateAtMostOneOf(n, reporter, FINAL, ABSTRACT);
+        validateAtMostOneOf(n, reporter, JML_INSTANCE, STATIC);
+        validateAtMostOneOf(n, reporter, JML_MODEL, JML_GHOST);
         if (hasStrictfp) {
             validateAtMostOneOf(n, reporter, NATIVE, STRICTFP);
         } else {
