@@ -1832,7 +1832,6 @@ public class GenericVisitorAdapterTest {
         Mockito.when(node.getTypeName()).thenReturn(Optional.of(mock(Name.class)));
         Mockito.when(node.getComment()).thenReturn(Optional.of(mock(Comment.class)));
 
-
         // Then
         Object result = visitor.visit(node, argument);
 

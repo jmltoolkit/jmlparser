@@ -21,12 +21,19 @@ import org.jspecify.annotations.NonNull;
  * @version 1 (11/23/21)
  */
 public class JmlDoc extends Node {
+    private String content;
 
-    private JavaToken content;
+    public JmlDoc(JavaToken content) {
+        this(new TokenRange(content, content), content.getText());
+    }
+
+    private static JavaToken getContent(JavaToken content) {
+        return content;
+    }
 
     @AllFieldsConstructor
-    public JmlDoc(JavaToken content) {
-        this(new TokenRange(content, content), content);
+    public JmlDoc(String content) {
+        this(null, content);
     }
 
     @Override
@@ -43,11 +50,11 @@ public class JmlDoc extends Node {
 
     @Generated("com.github.javaparser.generator.core.node.PropertyGenerator")
     public JavaToken getContent() {
-        return content;
+        return new JavaToken(0, content);
     }
 
     @Generated("com.github.javaparser.generator.core.node.PropertyGenerator")
-    public JmlDoc setContent(final @NonNull() JavaToken content) {
+    public JmlDoc setContent(final @NonNull() String content) {
         assertNotNull(content);
         if (content == this.content) {
             return this;
@@ -73,15 +80,19 @@ public class JmlDoc extends Node {
      * This constructor is used by the parser and is considered private.
      */
     @Generated("com.github.javaparser.generator.core.node.MainConstructorGenerator")
-    public JmlDoc(TokenRange tokenRange, JavaToken content) {
+    public JmlDoc(TokenRange tokenRange, String content) {
         super(tokenRange);
         setContent(content);
         customInitialization();
     }
 
+    public JmlDoc(TokenRange tokenRange, JavaToken content) {
+        this(tokenRange, content.getText());
+    }
+
     @com.github.javaparser.ast.key.IgnoreLexPrinting()
     @Generated("com.github.javaparser.generator.core.node.PropertyGenerator")
-    public @NonNull() JavaToken content() {
+    public @NonNull() String content() {
         return Objects.requireNonNull(content);
     }
 }

@@ -428,7 +428,6 @@ TOKEN : {
 | <WORKING_SPACE: "working_space">
 | <WORKING_SPACE_REDUNDANTLY: "working_space_redundantly">
 | <WRITABLE: "writable">
-| <DOTDOT: "..">
 //| <LOCSET: "\\locset">
 //| <STOREREF: "\\storeref">
 //| <EMPTYSET: "\\emptyset">
@@ -1188,10 +1187,12 @@ MORE: { <ENTER_TEXT_BLOCK: "\"\"\"" >: IN_TEXT_BLOCK }
 // which might match that doublequote with following doublequotes.
 <IN_TEXT_BLOCK> MORE :{ <TEXT_BLOCK_CONTENT:  ( "\\" "\"" | ~[] ) > }
 
+/*
 <JML_SINGLE_CONTRACT, JML_MULTI_CONTRACT>
 TOKEN: {
   <JML_IDENTIFIER: "\\" <IDENTIFIER> >
 }
+*/
 
 /* IDENTIFIERS */
 <DEFAULT,JML_SINGLE_CONTRACT,JML_MULTI_CONTRACT>
@@ -1202,7 +1203,7 @@ TOKEN :
     | "\u005f" (<PART_LETTER>)+
   >
 |
-  < JMLIDENTIFIER: "\\"<IDENTIFIER> >
+  < JML_IDENTIFIER: "\\"<IDENTIFIER> >
 |
   < SVIDENTIFIER:  "#" <IDENTIFIER> >
 |
@@ -1390,8 +1391,9 @@ TOKEN :
 | < RBRACKET: "]" >
 | < SEMICOLON: ";" >
 | < COMMA: "," >
-| < DOT: "." >
+| < DOTDOT: "..">
 | < ELLIPSIS: "..." >
+| < DOT: "." >
 | < AT: "@" >
 | < DOUBLECOLON: "::" >
 }
@@ -3522,7 +3524,7 @@ String Identifier():
 }
 {
     (
-        <IDENTIFIER> | <SVIDENTIFIER> | <KEYIDENTIFIER> | <JMLIDENTIFIER> |
+        <IDENTIFIER> | <SVIDENTIFIER> | <KEYIDENTIFIER> | <JML_IDENTIFIER> |
         // TODO: Explain why these keywords are explicitly flagged up as "included", and why they're not already covered by {@code <IDENTIFIER>}.
         // TODO: Explain how / where boolean and null literals are excluded.
         // Make sure the module info keywords don't interfere with normal Java parsing by matching them as normal identifiers.
@@ -7912,7 +7914,7 @@ Expression KeyIndexRange() :
 }
 {
     result = Expression()
-    [ ".." end = Expression()
+    [ <DOTDOT> end = Expression()
       { result = new KeyRangeExpression(range(result, token()), result, end); } ]
     { return result; }
 }
