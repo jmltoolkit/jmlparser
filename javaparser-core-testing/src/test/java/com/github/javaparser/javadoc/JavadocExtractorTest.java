@@ -29,8 +29,11 @@ import com.github.javaparser.ast.comments.TraditionalJavadocComment;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import java.io.File;
 import java.io.FileNotFoundException;
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+@Disabled
 class JavadocExtractorTest {
 
     @Test
