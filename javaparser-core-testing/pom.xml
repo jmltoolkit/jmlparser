@@ -38,6 +38,13 @@
 					<reportFormat>html</reportFormat>
 					<failIfNoTests>true</failIfNoTests>
 					<argLine>@{jacoco.javaagent}</argLine>
+					<parallel>all</parallel>
+					<properties>
+						<configurationParameters>
+							junit.jupiter.execution.parallel.enabled = true
+							junit.jupiter.execution.parallel.mode.default = concurrent
+						</configurationParameters>
+					</properties>
 				</configuration>
 			</plugin>
 			<plugin>
