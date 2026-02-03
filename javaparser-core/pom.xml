@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>jmlparser-parent</artifactId>
 		<groupId>io.github.jmltoolkit</groupId>
-		<version>3.27.0-b7-SNAPSHOT</version>
+		<version>3.27.1-b8-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
@@ -12,12 +12,7 @@
 	<name>${project.groupId}:${project.artifactId}</name>
 	<url>https://github.com/jmltoolkit</url>
 	<description>The core parser functionality. This may be all you need.</description>
-	<dependencies>
-		<dependency>
-			<groupId>org.jspecify</groupId>
-			<artifactId>jspecify</artifactId>
-		</dependency>
-	</dependencies>
+
 	<licenses>
 		<license>
 			<name>GNU Lesser General Public License</name>
