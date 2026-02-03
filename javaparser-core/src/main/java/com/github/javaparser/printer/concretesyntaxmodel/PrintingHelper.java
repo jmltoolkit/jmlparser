@@ -23,6 +23,7 @@ package com.github.javaparser.printer.concretesyntaxmodel;
 import com.github.javaparser.printer.Stringable;
 
 class PrintingHelper {
+
     static String printToString(Object value) {
         if (value instanceof Stringable) {
             return ((Stringable) value).asString();

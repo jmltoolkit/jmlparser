@@ -25,6 +25,7 @@ import org.jspecify.annotations.NonNull;
  * @version 1 (2/21/21)
  */
 public class JmlMultiCompareExpr extends Expression implements Jmlish {
+
     @NonEmptyProperty
     private NodeList<Expression> expressions;
 

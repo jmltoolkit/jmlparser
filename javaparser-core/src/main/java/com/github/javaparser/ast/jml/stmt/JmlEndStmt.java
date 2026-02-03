@@ -139,6 +139,7 @@ public class JmlEndStmt extends JmlStatement implements NodeWithJmlTags<JmlEndSt
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlEndStmt(Consumer<JmlEndStmt> action) {
         action.accept(this);

@@ -153,6 +153,7 @@ public class JmlDocStmt extends Statement implements JmlDocContainer {
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlDocStmt(Consumer<JmlDocStmt> action) {
         action.accept(this);

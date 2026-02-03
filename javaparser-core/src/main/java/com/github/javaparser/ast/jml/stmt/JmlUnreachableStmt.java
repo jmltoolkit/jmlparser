@@ -133,6 +133,7 @@ public class JmlUnreachableStmt extends JmlStatement implements NodeWithJmlTags<
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlUnreachableStmt(Consumer<JmlUnreachableStmt> action) {
         action.accept(this);

@@ -242,6 +242,7 @@ public class JmlExpressionStmt extends JmlStatement implements NodeWithJmlTags<J
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlExpressionStmt(Consumer<JmlExpressionStmt> action) {
         action.accept(this);

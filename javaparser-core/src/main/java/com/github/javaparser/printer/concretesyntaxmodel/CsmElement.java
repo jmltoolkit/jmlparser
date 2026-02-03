@@ -52,11 +52,10 @@ public interface CsmElement {
     static CsmElement specialJmlMultiCompareExpr() {
         return (node, printer) -> {
             JmlMultiCompareExpr e = (JmlMultiCompareExpr) node;
-            for (int i = 0; i < e.getExpressions().size() - 1 ; i++) {
+            for (int i = 0; i < e.getExpressions().size() - 1; i++) {
                 var term = e.getExpressions().get(i);
                 var op = e.getOperators().get(i);
                 printer.print(PrintingHelper.printToString(term));
-
                 space().prettyPrint(null, printer);
                 printer.print(PrintingHelper.printToString(op));
                 space().prettyPrint(null, printer);

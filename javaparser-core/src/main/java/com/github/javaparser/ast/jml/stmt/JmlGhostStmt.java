@@ -184,6 +184,7 @@ public class JmlGhostStmt extends JmlStatement implements NodeWithJmlTags<JmlGho
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlGhostStmt(Consumer<JmlGhostStmt> action) {
         action.accept(this);

@@ -169,6 +169,7 @@ public class JmlDocType extends TypeDeclaration<JmlDocType> implements JmlDocCon
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlDocType(Consumer<JmlDocType> action) {
         action.accept(this);

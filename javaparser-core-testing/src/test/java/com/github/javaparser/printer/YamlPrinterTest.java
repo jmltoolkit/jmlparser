@@ -23,7 +23,6 @@ package com.github.javaparser.printer;
 
 import static com.github.javaparser.StaticJavaParser.parse;
 import static com.github.javaparser.StaticJavaParser.parseExpression;
-import static com.github.javaparser.utils.TestUtils.assertEqualsStringIgnoringEol;
 import static com.github.javaparser.utils.TestUtils.readTextResource;
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -159,6 +159,7 @@ public class JmlDocDeclaration extends BodyDeclaration<JmlDocDeclaration> implem
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlDocDeclaration(Consumer<JmlDocDeclaration> action) {
         action.accept(this);

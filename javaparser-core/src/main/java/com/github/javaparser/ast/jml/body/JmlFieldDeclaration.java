@@ -175,6 +175,7 @@ public class JmlFieldDeclaration extends JmlClassLevelDeclaration<JmlFieldDeclar
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlFieldDeclaration(Consumer<JmlFieldDeclaration> action) {
         action.accept(this);

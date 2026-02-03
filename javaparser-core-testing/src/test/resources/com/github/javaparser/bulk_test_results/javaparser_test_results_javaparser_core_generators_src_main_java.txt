@@ -94,4 +94,4 @@ Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Con
 com/github/javaparser/generator/VisitorGenerator.java
 Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
 
-32 problems in 31 files
+32 problems in 32 files

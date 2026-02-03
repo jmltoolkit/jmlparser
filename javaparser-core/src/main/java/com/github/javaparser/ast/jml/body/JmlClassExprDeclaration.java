@@ -324,6 +324,7 @@ public class JmlClassExprDeclaration extends JmlClassLevelDeclaration<JmlClassEx
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlClassExprDeclaration(Consumer<JmlClassExprDeclaration> action) {
         action.accept(this);

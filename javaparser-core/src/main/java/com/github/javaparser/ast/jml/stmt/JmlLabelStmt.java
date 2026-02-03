@@ -170,6 +170,7 @@ public class JmlLabelStmt extends JmlStatement implements NodeWithJmlTags<JmlLab
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlLabelStmt(Consumer<JmlLabelStmt> action) {
         action.accept(this);

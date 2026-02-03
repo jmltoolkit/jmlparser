@@ -139,6 +139,7 @@ public class JmlBeginStmt extends JmlStatement implements NodeWithJmlTags<JmlBeg
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlBeginStmt(Consumer<JmlBeginStmt> action) {
         action.accept(this);

@@ -61,6 +61,7 @@ public abstract class JmlClassLevelDeclaration<T extends BodyDeclaration<?>> ext
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlClassLevelDeclaration(Consumer<JmlClassLevelDeclaration> action) {
         action.accept(this);

@@ -227,6 +227,7 @@ public class JmlMethodDeclaration extends JmlClassLevelDeclaration<JmlMethodDecl
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlMethodDeclaration(Consumer<JmlMethodDeclaration> action) {
         action.accept(this);

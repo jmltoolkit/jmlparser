@@ -253,6 +253,7 @@ public class JmlRepresentsDeclaration extends JmlClassLevelDeclaration<JmlRepres
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlRepresentsDeclaration(Consumer<JmlRepresentsDeclaration> action) {
         action.accept(this);

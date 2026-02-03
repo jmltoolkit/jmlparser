@@ -59,6 +59,7 @@ public abstract class JmlStatement extends Statement implements Jmlish {
         return Optional.of(this);
     }
 
+    @Override
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public void ifJmlStatement(Consumer<JmlStatement> action) {
         action.accept(this);
