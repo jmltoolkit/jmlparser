@@ -20,16 +20,14 @@ import java.util.Optional;
 import java.util.function.Consumer;
 import org.jspecify.annotations.NonNull;
 
-/**
- * 12.5 Set Comprehensions
- * https://www.cs.ucf.edu/~leavens/JML/jmlrefman/jmlrefman_12.html#SEC160
- * <p>
- * new JMLObjectSet {Integer i | myIntSet.has(i) &&
- * i != null && 0 <= i.intValue() && i.intValue() <= 10 }
- *
- * @author Alexander Weigl
- * @version 1 (3/20/21)
- */
+/// [12.5 Set Comprehensions](https://www.cs.ucf.edu/~leavens/JML/jmlrefman/jmlrefman_12.html#SEC160)
+///
+/// ```java
+/// new JMLObjectSet {Integer i | myIntSet.has(i) &&
+/// i != null && 0 <= i.intValue() && i.intValue() <= 10 }
+/// ```
+/// @author Alexander Weigl
+/// @version 1 (3/20/21)
 public class JmlSetComprehensionExpr extends Expression implements Jmlish {
 
     private VariableDeclarator binding;
