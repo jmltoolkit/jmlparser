@@ -1272,10 +1272,9 @@ public class ConcreteSyntaxModel {
                         newline()));
         concreteSyntaxModelByClass.put(
                 JmlCallableClause.class,
-                sequence(
-                        child(MODIFIERS),
-                        token(CALLABLE), // space(),
-                        // child(EXPRESSION),
+                sequence( // space(),
+                        child(MODIFIERS), // child(EXPRESSION),
+                        token(CALLABLE),
                         semicolon()));
         concreteSyntaxModelByClass.put(
                 JmlClassExprDeclaration.class,

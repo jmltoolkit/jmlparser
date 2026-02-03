@@ -2303,7 +2303,7 @@ public class PrettyPrintVisitor implements VoidVisitor<Void> {
 
     @Override
     public void visit(JmlDoc n, Void arg) {
-        printer.print(n.getContent().asString());
+        printer.print(n.getContent());
     }
 
     @Override

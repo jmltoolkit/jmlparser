@@ -2,6 +2,7 @@ package com.github.javaparser.ast.jml.doc;
 
 import static com.github.javaparser.utils.Utils.assertNotNull;
 
+import com.github.javaparser.GeneratedJavaParserConstants;
 import com.github.javaparser.JavaToken;
 import com.github.javaparser.TokenRange;
 import com.github.javaparser.ast.AllFieldsConstructor;
@@ -21,6 +22,7 @@ import org.jspecify.annotations.NonNull;
  * @version 1 (11/23/21)
  */
 public class JmlDoc extends Node {
+
     private String content;
 
     public JmlDoc(JavaToken content) {
@@ -49,14 +51,14 @@ public class JmlDoc extends Node {
     }
 
     @Generated("com.github.javaparser.generator.core.node.PropertyGenerator")
-    public JavaToken getContent() {
-        return new JavaToken(0, content);
+    public String getContent() {
+        return content;
     }
 
     @Generated("com.github.javaparser.generator.core.node.PropertyGenerator")
     public JmlDoc setContent(final @NonNull() String content) {
         assertNotNull(content);
-        if (content == this.content) {
+        if (content.equals(this.content)) {
             return this;
         }
         notifyPropertyChange(ObservableProperty.CONTENT, this.content, content);
@@ -94,5 +96,14 @@ public class JmlDoc extends Node {
     @Generated("com.github.javaparser.generator.core.node.PropertyGenerator")
     public @NonNull() String content() {
         return Objects.requireNonNull(content);
+    }
+
+    public JavaToken constructToken() {
+        final var tokenRange = getTokenRange();
+        if (tokenRange.isPresent()) {
+            assert (tokenRange.get().getBegin() == tokenRange.get().getEnd());
+            return tokenRange.get().getBegin();
+        }
+        return new JavaToken(GeneratedJavaParserConstants.JML_BLOCK_COMMENT, getContent());
     }
 }
