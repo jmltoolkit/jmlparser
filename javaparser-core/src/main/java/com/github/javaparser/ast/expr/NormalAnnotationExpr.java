@@ -182,6 +182,7 @@ public class NormalAnnotationExpr extends AnnotationExpr {
     }
 
     @NonNull()
+    @Generated("com.github.javaparser.generator.core.node.PropertyGenerator")
     public NodeList<MemberValuePair> pairs() {
         return Objects.requireNonNull(pairs);
     }
