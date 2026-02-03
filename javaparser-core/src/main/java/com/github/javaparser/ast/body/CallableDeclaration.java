@@ -506,7 +506,7 @@ public abstract class CallableDeclaration<T extends CallableDeclaration<?>> exte
      * Returns true if the method has a variable number of arguments
      */
     public boolean isVariableArityMethod() {
-        return getParameters().size() > 0 && getParameters().getLast().get().isVarArgs();
+        return getParameters().size() > 0 && getParameters().getOLast().get().isVarArgs();
     }
 
     /*

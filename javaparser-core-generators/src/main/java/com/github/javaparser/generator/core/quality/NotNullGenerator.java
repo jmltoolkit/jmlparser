@@ -158,7 +158,7 @@ public class NotNullGenerator extends CompilationUnitGenerator {
 
         // When the callable is a constructor we must check if is a ExplicitConstructorInvocationStmt.
         if (callableDeclaration.isConstructorDeclaration()) {
-            Optional<Statement> optionalFirstStatement = statements.getFirst();
+            Optional<Statement> optionalFirstStatement = statements.getOFirst();
             if (optionalFirstStatement.isPresent()) {
 
                 // Check if the first item is a "super" expr. If it's then we add the assertions after it.

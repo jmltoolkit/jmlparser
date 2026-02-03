@@ -200,7 +200,7 @@ public class JavaParserClassDeclaration extends AbstractClassDeclaration
             return Optional.of(object());
         }
         return Optional.of(
-                toReferenceType(wrappedNode.getExtendedTypes().getFirst().get()));
+                toReferenceType(wrappedNode.getExtendedTypes().getOFirst().get()));
     }
 
     @Override
