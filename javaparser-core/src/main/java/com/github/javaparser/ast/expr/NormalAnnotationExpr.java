@@ -33,8 +33,10 @@ import com.github.javaparser.ast.visitor.GenericVisitor;
 import com.github.javaparser.ast.visitor.VoidVisitor;
 import com.github.javaparser.metamodel.JavaParserMetaModel;
 import com.github.javaparser.metamodel.NormalAnnotationExprMetaModel;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
+import org.jspecify.annotations.NonNull;
 
 /**
  * An annotation that has one or more key-value pairs.<br>{@code @Mapping(a=5, d=10)}
@@ -177,5 +179,10 @@ public class NormalAnnotationExpr extends AnnotationExpr {
     @Generated("com.github.javaparser.generator.core.node.TypeCastingGenerator")
     public Optional<NormalAnnotationExpr> toNormalAnnotationExpr() {
         return Optional.of(this);
+    }
+
+    @NonNull()
+    public NodeList<MemberValuePair> pairs() {
+        return Objects.requireNonNull(pairs);
     }
 }

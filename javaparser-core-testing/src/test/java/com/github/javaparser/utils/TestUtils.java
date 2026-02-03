@@ -28,6 +28,7 @@ import static com.github.javaparser.utils.Utils.normalizeEolInTextBlock;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
+import static org.assertj.core.api.Assertions.fail;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.github.javaparser.*;
