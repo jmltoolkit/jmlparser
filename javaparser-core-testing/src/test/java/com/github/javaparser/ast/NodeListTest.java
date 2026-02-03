@@ -125,7 +125,7 @@ class NodeListTest extends AbstractLexicalPreservingTest {
     public void getFirstWhenEmpty() {
         final NodeList<Name> list = nodeList();
 
-        Optional<Name> first = list.getFirst();
+        Optional<Name> first = list.getOFirst();
 
         assertFalse(first.isPresent());
         assertEquals("Optional.empty", first.toString());
@@ -135,7 +135,7 @@ class NodeListTest extends AbstractLexicalPreservingTest {
     public void getFirstWhenNonEmpty() {
         final NodeList<Name> list = nodeList(new Name("abc"), new Name("bcd"), new Name("cde"));
 
-        Optional<Name> first = list.getFirst();
+        Optional<Name> first = list.getOFirst();
 
         assertTrue(first.isPresent());
         assertEquals("Optional[abc]", first.toString());
@@ -145,7 +145,7 @@ class NodeListTest extends AbstractLexicalPreservingTest {
     public void getLastWhenEmpty() {
         final NodeList<Name> list = nodeList();
 
-        Optional<Name> last = list.getLast();
+        Optional<Name> last = list.getOLast();
 
         assertFalse(last.isPresent());
         assertEquals("Optional.empty", last.toString());
@@ -155,7 +155,7 @@ class NodeListTest extends AbstractLexicalPreservingTest {
     public void getLastWhenNonEmpty() {
         final NodeList<Name> list = nodeList(new Name("abc"), new Name("bcd"), new Name("cde"));
 
-        Optional<Name> last = list.getLast();
+        Optional<Name> last = list.getOLast();
 
         assertTrue(last.isPresent());
         assertEquals("Optional[cde]", last.toString());

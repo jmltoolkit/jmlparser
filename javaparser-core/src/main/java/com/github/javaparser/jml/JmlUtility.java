@@ -25,7 +25,7 @@ public class JmlUtility {
         var m = ((Node) n);
         var r = m.getRange();
         if (r.isPresent()
-                && (first = n.getContracts().getFirst()).isPresent()
+                && (first = n.getContracts().getOFirst()).isPresent()
                 && first.get().getRange().isPresent()) {
             m.setRange(r.get().withBegin(first.get().getRange().get().begin));
         }

@@ -113,8 +113,8 @@ abstract class GeneratedJavaParserBase {
      */
     TokenRange range(NodeList<? extends Node> list) {
         if (storeTokens && list.isNonEmpty()) {
-            final Optional<? extends Node> first = list.getFirst();
-            final Optional<? extends Node> last = list.getLast();
+            final Optional<? extends Node> first = list.getOFirst();
+            final Optional<? extends Node> last = list.getOLast();
             if (last.isPresent() && first.isPresent()) {
                 return range(first.get(), last.get());
             }
