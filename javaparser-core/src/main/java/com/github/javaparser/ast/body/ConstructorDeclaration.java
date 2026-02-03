@@ -390,14 +390,4 @@ public class ConstructorDeclaration extends CallableDeclaration<ConstructorDecla
         }
         return super.remove(node);
     }
-
-    @Override
-    public NodeList<JmlContract> getContracts() {
-        return null;
-    }
-
-    @Override
-    public ConstructorDeclaration setContracts(NodeList<JmlContract> contracts) {
-        return null;
-    }
 }

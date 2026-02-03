@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class KeYParsingTests {
     @Test
     void testGhostModifier() {
-        Statement x = StaticJavaParser.parseStatement("ghost int x;");
+        Statement x = StaticJavaParser.parseStatement("/*@ ghost */ int x;");
     }
 
     @Test
