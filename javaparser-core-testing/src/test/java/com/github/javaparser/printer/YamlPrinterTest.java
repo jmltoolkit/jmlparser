@@ -25,6 +25,7 @@ import static com.github.javaparser.StaticJavaParser.parse;
 import static com.github.javaparser.StaticJavaParser.parseExpression;
 import static com.github.javaparser.utils.TestUtils.assertEqualsStringIgnoringEol;
 import static com.github.javaparser.utils.TestUtils.readTextResource;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.expr.Expression;
@@ -41,7 +42,7 @@ class YamlPrinterTest {
         YamlPrinter yamlPrinter = new YamlPrinter(true);
         Expression expression = parseExpression("x(1,1)");
         String output = yamlPrinter.output(expression);
-        assertEqualsStringIgnoringEol(read("yamlWithType.yaml"), output);
+        assertThat(output).isEqualToNormalizingWhitespace(read("yamlWithType.yaml"));
     }
 
     @Test
@@ -49,7 +50,7 @@ class YamlPrinterTest {
         YamlPrinter yamlPrinter = new YamlPrinter(false);
         Expression expression = parseExpression("1+1");
         String output = yamlPrinter.output(expression);
-        assertEqualsStringIgnoringEol(read("yamlWithoutType.yaml"), output);
+        assertThat(output).isEqualToNormalizingWhitespace(read("yamlWithoutType.yaml"));
     }
 
     @Test
@@ -57,7 +58,7 @@ class YamlPrinterTest {
         YamlPrinter yamlPrinter = new YamlPrinter(true);
         Expression expression = parseExpression("\"a\\\\: b\"");
         String output = yamlPrinter.output(expression);
-        assertEqualsStringIgnoringEol(read("yamlWithColonFollowedBySpaceInValue.yaml"), output);
+        assertThat(output).isEqualToNormalizingWhitespace(read("yamlWithColonFollowedBySpaceInValue.yaml"));
     }
 
     @Test
@@ -65,7 +66,7 @@ class YamlPrinterTest {
         YamlPrinter yamlPrinter = new YamlPrinter(true);
         Expression expression = parseExpression("\"a\\\\:\\\\nb\"");
         String output = yamlPrinter.output(expression);
-        assertEqualsStringIgnoringEol(read("yamlWithColonFollowedByLineSeparatorInValue.yaml"), output);
+        assertThat(output).isEqualToNormalizingWhitespace(read("yamlWithColonFollowedByLineSeparatorInValue.yaml"));
     }
 
     @Test
@@ -75,6 +76,6 @@ class YamlPrinterTest {
         YamlPrinter yamlPrinter = new YamlPrinter(true);
         CompilationUnit computationUnit = parse(code);
         String output = yamlPrinter.output(computationUnit);
-        assertEqualsStringIgnoringEol(read("yamlParsingJavadocWithQuoteAndNewline.yaml"), output);
+        assertThat(output).isEqualToNormalizingWhitespace(read("yamlParsingJavadocWithQuoteAndNewline.yaml"));
     }
 }

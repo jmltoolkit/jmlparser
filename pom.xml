@@ -145,9 +145,11 @@
         <java.version>21</java.version>
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <byte-buddy.version>1.18.4</byte-buddy.version>
+        <!--
         <argLine>
             -javaagent:'${settings.localRepository}/net/bytebuddy/byte-buddy-agent/${byte-buddy.version}/byte-buddy-agent-${byte-buddy.version}.jar'
         </argLine>
+        -->
         <build.timestamp>2025-10-04T00:00:00Z</build.timestamp>
         <jacoco.javaagent/>
 

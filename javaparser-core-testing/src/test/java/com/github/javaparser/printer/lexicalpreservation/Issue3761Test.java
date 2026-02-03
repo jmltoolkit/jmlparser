@@ -33,7 +33,10 @@ public class Issue3761Test extends AbstractLexicalPreservingTest {
 
     @Test
     public void test() {
-        considerCode("class C { \n" + "    static String S = \"s\";\n" + "}");
+        considerCode("""
+                class C {\s
+                    static String S = "s";
+                }""");
 
         FieldDeclaration field = cu.findAll(FieldDeclaration.class).get(0);
 
@@ -42,7 +45,7 @@ public class Issue3761Test extends AbstractLexicalPreservingTest {
         kws.add(0, Modifier.DefaultKeyword.PROTECTED);
         field.setModifiers();
 
-        String expected = "class C { \r\n" + "    protected static String S = \"s\";\r\n" + "}";
+        String expected = "class C { \r\n    protected static String S = \"s\";\r\n" + "}";
 
         assertEqualsStringIgnoringEol(expected, LexicalPreservingPrinter.print(cu));
     }
