@@ -39,6 +39,7 @@ jobs:
         with:
           java-version: '21'
           distribution: 'zulu'
+          cache: 'maven'
       - name: Validate Project Checkstyle
         run: ./mvnw -B checkstyle:check
 
@@ -55,6 +56,7 @@ jobs:
         with:
           java-version: '21'
           distribution: 'zulu'
+          cache: 'maven'
       - name: Generate code and format
         run: |
           ./run_core_metamodel_generator.sh
