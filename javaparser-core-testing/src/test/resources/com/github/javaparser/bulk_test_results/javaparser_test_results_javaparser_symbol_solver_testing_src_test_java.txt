@@ -1,1 +1,43 @@
-0 problems in 0 files
+com/github/javaparser/key/LogicalTypes.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/AbstractSymbolResolutionTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/model/typesystem/ReferenceTypeTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/reflectionmodel/ReflectionClassDeclarationTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/resolution/DefaultPackageTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/resolution/typesolvers/AarTypeSolverTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/resolution/typesolvers/AbstractTypeSolverTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/resolution/typesolvers/ClassLoaderTypeSolverTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/resolution/typesolvers/CombinedTypeSolverTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/resolution/typesolvers/JarTypeSolverTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/resolution/typesolvers/JavaParserTypeSolverTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/resolution/typesolvers/MemoryTypeSolverTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/resolution/typesolvers/ReflectionTypeSolverTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/symbolsolver/utils/LeanParserConfiguration.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+14 problems in 14 files

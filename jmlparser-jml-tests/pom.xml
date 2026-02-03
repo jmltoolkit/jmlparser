@@ -2,11 +2,12 @@
 	<parent>
 		<artifactId>jmlparser-parent</artifactId>
 		<groupId>io.github.jmltoolkit</groupId>
-		<version>3.28.0-J7.0-K10.1-SNAPSHOT</version>
+		<version>3.28.0-J8.0-K10.1-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>jmlparser-jml-tests</artifactId>
+	<name>${project.groupId}:${project.artifactId}</name>
 	<packaging>jar</packaging>
 	<description>JML Tests, copied from KeY and OpenJML</description>
 

@@ -10,9 +10,11 @@
 		<module>javaparser-core-serialization</module>
 		<module>javaparser-symbol-solver-core</module>
 		<module>javaparser-symbol-solver-testing</module>
+
+		<module>jmlparser-jml-tests</module>
+
 		<module>javaparser-key-testing</module>
 		<!--<module>javaparser-key-generator</module>-->
-		<module>jmlparser-jml-tests</module>
 	</modules>
 
 	<groupId>io.github.jmltoolkit</groupId>
@@ -20,10 +22,10 @@
 	<packaging>pom</packaging>
 	<version>3.28.0-J8.0-K10.1-SNAPSHOT</version>
 
-	<name>jmlparser-parent</name>
 	<url>https://github.com/wadoon/jmlparser</url>
 	<inceptionYear>2021</inceptionYear>
 	<description>Java+Jml Parser and Abstract Syntax Tree</description>
+	<name>${project.groupId}:${project.artifactId}</name>
 
 	<licenses>
 		<license>

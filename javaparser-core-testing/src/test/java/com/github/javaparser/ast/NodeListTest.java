@@ -61,7 +61,7 @@ class NodeListTest extends AbstractLexicalPreservingTest {
     void addFirst() {
         final NodeList<Name> list = nodeList(new Name("abc"), new Name("bcd"), new Name("cde"));
 
-        list.addFirstO(new Name("xxx"));
+        list.addNFirst(new Name("xxx"));
 
         assertEquals(4, list.size());
         assertEquals("[xxx, abc, bcd, cde]", list.toString());
@@ -71,7 +71,7 @@ class NodeListTest extends AbstractLexicalPreservingTest {
     void addLast() {
         final NodeList<Name> list = nodeList(new Name("abc"), new Name("bcd"), new Name("cde"));
 
-        list.addLastO(new Name("xxx"));
+        list.addNLast(new Name("xxx"));
 
         assertEquals(4, list.size());
         assertEquals("[abc, bcd, cde, xxx]", list.toString());

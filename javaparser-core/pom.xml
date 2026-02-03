@@ -3,12 +3,11 @@
 	<parent>
 		<artifactId>jmlparser-parent</artifactId>
 		<groupId>io.github.jmltoolkit</groupId>
-		<version>3.27.1-b8-SNAPSHOT</version>
+		<version>3.28.0-J8.0-K10.1-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>jmlparser-core</artifactId>
-	<packaging>jar</packaging>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<url>https://github.com/jmltoolkit</url>
 	<description>The core parser functionality. This may be all you need.</description>
@@ -59,8 +58,7 @@
 						</goals>
 						<configuration>
 							<grammarEncoding>${project.build.sourceEncoding}</grammarEncoding>
-							<jdkVersion>${java.version}</jdkVersion>
-							<javadocFriendlyComments>true</javadocFriendlyComments>
+							<jdkVersion>1.5</jdkVersion>
 						</configuration>
 					</execution>
 				</executions>

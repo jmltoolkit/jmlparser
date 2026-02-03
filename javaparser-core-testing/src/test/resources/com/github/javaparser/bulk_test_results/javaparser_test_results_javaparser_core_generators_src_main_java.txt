@@ -1,1 +1,97 @@
-0 problems in 0 files
+com/github/javaparser/generator/CompilationUnitGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/node/AcceptGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/node/CloneGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/node/GetMetaModelGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/node/MainConstructorGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/node/NodeModifierGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/node/PropertyGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/node/RemoveMethodGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/node/ReplaceMethodGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/node/TypeCastingGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/other/BndGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/other/TokenKindGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/quality/NotNullGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/utils/CodeUtils.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/CloneVisitorGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/EqualsVisitorGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/GenericListVisitorAdapterGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/GenericVisitorAdapterGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/GenericVisitorGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/GenericVisitorWithDefaultsGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/HashCodeVisitorGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/ModifierVisitorGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/NoCommentEqualsVisitorGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/NoCommentHashCodeVisitorGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/ObjectIdentityEqualsVisitorGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/ObjectIdentityHashCodeVisitorGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/VoidVisitorAdapterGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/VoidVisitorGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/core/visitor/VoidVisitorWithDefaultsGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/Generator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/NodeGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/generator/VisitorGenerator.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+32 problems in 31 files

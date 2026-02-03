@@ -66,7 +66,7 @@ public class MainConstructorGenerator extends NodeGenerator {
             }
         }
 
-        body.getStatements().addFirstO(parseExplicitConstructorInvocationStmt(superCall.toString()));
+        body.getStatements().addNFirst(parseExplicitConstructorInvocationStmt(superCall.toString()));
 
         body.addStatement("customInitialization();");
 

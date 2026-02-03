@@ -1,1 +1,7 @@
-0 problems in 0 files
+com/github/javaparser/metamodel/BaseNodeMetaModelTest.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+com/github/javaparser/printer/TestVisitor.java
+Cannot invoke "com.github.javaparser.ast.NodeList.forEach(java.util.function.Consumer)" because the return value of "com.github.javaparser.ast.body.ConstructorDeclaration.getContracts()" is null
+
+2 problems in 2 files
