@@ -80,8 +80,10 @@ jobs:
       ### -P,--activate-profiles : Comma-delimited list of profiles to activate
       ### AlsoSlowTests : by default, only quick tests are run - the profile `AlsoSlowTests` runs the full test suite
       - name: Test with Maven (incl. slow tests)
-        shell: bash
-        run: ./mvnw -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -B --errors clean test --activate-profiles AlsoSlowTests
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: "./mvnw --fail-at-end -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --activate-profiles AlsoSlowTests  -B --errors clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=wadoon_jmlparser"
 
       - name: Test reporting
         uses: dorny/test-reporter@v2
@@ -90,4 +92,3 @@ jobs:
           name: Test Report
           path: "**/target/surefire-reports/*.xml"
           reporter: java-junit
-
