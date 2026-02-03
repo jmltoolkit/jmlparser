@@ -25,6 +25,10 @@ import org.jspecify.annotations.NonNull;
  * @version 1 (2/21/21)
  */
 public class JmlMultiCompareExpr extends Expression implements Jmlish {
+    @NonEmptyProperty
+    private NodeList<Expression> expressions;
+
+    private Operators operators;
 
     public JmlMultiCompareExpr(TokenRange range, NodeList<Expression> expressions, List<BinaryExpr.Operator> ops) {
         this(range, expressions, new Operators(ops));
@@ -36,11 +40,6 @@ public class JmlMultiCompareExpr extends Expression implements Jmlish {
             super(ops);
         }
     }
-
-    @NonEmptyProperty
-    private NodeList<Expression> expressions;
-
-    private Operators operators;
 
     @AllFieldsConstructor
     public JmlMultiCompareExpr(NodeList<Expression> expressions, Operators operators) {

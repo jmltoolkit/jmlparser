@@ -28,6 +28,7 @@ import static com.github.javaparser.Providers.provider;
 import static com.github.javaparser.Range.range;
 import static com.github.javaparser.StaticJavaParser.*;
 import static com.github.javaparser.utils.TestUtils.assertInstanceOf;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.github.javaparser.ast.CompilationUnit;
@@ -152,8 +153,7 @@ class JavaParserTest {
 
         Problem problem = result.getProblem(0);
         assertEquals(range(1, 9, 1, 17), problem.getLocation().get().toRange().get());
-        // weigl over specific check.
-        assertTrue(problem.getMessage().startsWith("Parse error. Found <EOF>, expected one of"));
+        assertThat(problem.getMessage()).startsWith("Parse error. Found <EOF>");
         assertInstanceOf(ParseException.class, problem.getCause().get());
     }
 

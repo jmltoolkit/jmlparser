@@ -25,6 +25,7 @@ import static com.github.javaparser.TokenTypes.spaceTokenKind;
 
 import com.github.javaparser.GeneratedJavaParserConstants;
 import com.github.javaparser.ast.Node;
+import com.github.javaparser.ast.jml.expr.JmlMultiCompareExpr;
 import com.github.javaparser.ast.observer.ObservableProperty;
 import com.github.javaparser.printer.SourcePrinter;
 import com.github.javaparser.printer.lexicalpreservation.TextElement;
@@ -46,6 +47,23 @@ public interface CsmElement {
 
     static CsmElement sequence(CsmElement... elements) {
         return new CsmSequence(Arrays.asList(elements));
+    }
+
+    static CsmElement specialJmlMultiCompareExpr() {
+        return (node, printer) -> {
+            JmlMultiCompareExpr e = (JmlMultiCompareExpr) node;
+            for (int i = 0; i < e.getExpressions().size() - 1 ; i++) {
+                var term = e.getExpressions().get(i);
+                var op = e.getOperators().get(i);
+                printer.print(PrintingHelper.printToString(term));
+
+                space().prettyPrint(null, printer);
+                printer.print(PrintingHelper.printToString(op));
+                space().prettyPrint(null, printer);
+            }
+            var term = e.getExpressions().getLast();
+            printer.print(PrintingHelper.printToString(term));
+        };
     }
 
     static CsmElement string(int tokenType, String content) {

@@ -31,6 +31,8 @@ import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class NotNullGeneratorTest {
@@ -62,6 +64,8 @@ class NotNullGeneratorTest {
             DefaultPrettyPrinter printer = new DefaultPrettyPrinter();
             String expectedCode = printer.print(expectedSourcesCus.get(i));
             String editedCode = printer.print(editedSourceCus.get(i));
+
+            Assertions.assertEquals(expectedCode, editedCode);
 
             if (!expectedCode.equals(editedCode)) {
                 System.out.println("Expected:");

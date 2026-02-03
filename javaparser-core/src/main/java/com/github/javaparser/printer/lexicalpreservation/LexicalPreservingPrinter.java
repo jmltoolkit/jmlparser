@@ -852,8 +852,10 @@ public class LexicalPreservingPrinter {
                 try {
                     Object raw = m.invoke(parent);
                     if (!(raw instanceof NodeList)) {
-                        throw new IllegalStateException(
-                                "Expected NodeList, found " + raw.getClass().getCanonicalName());
+                        //TODO weigl fix on feature/key.
+                        continue;
+                        //throw new IllegalStateException(
+                        //        "Expected NodeList, found " + raw.getClass().getCanonicalName());
                     }
                     NodeList<?> result = (NodeList<?>) raw;
                     if (result == nodeList) {
