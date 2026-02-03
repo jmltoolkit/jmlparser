@@ -435,7 +435,11 @@
                     <configuration>
                         <java>
                             <!-- google-java-format, but better: see https://github.com/palantir/palantir-java-format -->
-                            <palantirJavaFormat/>
+                            <palantirJavaFormat>
+                                <version>2.86.0</version>                     <!-- optional -->
+                                <style>PALANTIR</style>                       <!-- or AOSP/GOOGLE (optional) -->
+                                <formatJavadoc>false</formatJavadoc>          <!-- defaults to false (optional, requires at least Palantir 2.39.0) -->
+                            </palantirJavaFormat>
                         </java>
                     </configuration>
                 </plugin>
