@@ -2637,14 +2637,7 @@ public final class JavaParserMetaModel {
                 .getDerivedPropertyMetaModels()
                 .add(variableDeclarationExprMetaModel.maximumCommonTypePropertyMetaModel);
         jmlDocMetaModel.contentPropertyMetaModel = new PropertyMetaModel(
-                jmlDocMetaModel,
-                "content",
-                com.github.javaparser.JavaToken.class,
-                Optional.empty(),
-                false,
-                false,
-                false,
-                false);
+                jmlDocMetaModel, "content", java.lang.String.class, Optional.empty(), false, false, false, false);
         jmlDocMetaModel.getDeclaredPropertyMetaModels().add(jmlDocMetaModel.contentPropertyMetaModel);
         jmlDocDeclarationMetaModel.jmlCommentsPropertyMetaModel = new PropertyMetaModel(
                 jmlDocDeclarationMetaModel,

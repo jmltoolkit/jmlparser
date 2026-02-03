@@ -48,9 +48,9 @@ public class ModifierValidator extends VisitorValidator {
         PROTECTED,
         ABSTRACT,
         FINAL,
-        SYNCHRONIZED,
+        SYNCHRONIZED, // JML
         NATIVE,
-        STRICTFP, // JML
+        STRICTFP,
         JML_PURE,
         JML_STRICTLY_PURE,
         JML_NULLABLE,
@@ -73,9 +73,9 @@ public class ModifierValidator extends VisitorValidator {
         STATIC,
         FINAL,
         SYNCHRONIZED,
-        NATIVE,
+        NATIVE, // JML
         STRICTFP,
-        DEFAULT, // JML
+        DEFAULT,
         JML_PURE,
         JML_STRICTLY_PURE,
         JML_NULLABLE,
@@ -99,9 +99,9 @@ public class ModifierValidator extends VisitorValidator {
         STATIC,
         FINAL,
         SYNCHRONIZED,
-        NATIVE,
+        NATIVE, // JML
         STRICTFP,
-        DEFAULT, // JML
+        DEFAULT,
         JML_PURE,
         JML_STRICTLY_PURE,
         JML_NULLABLE,
@@ -148,9 +148,9 @@ public class ModifierValidator extends VisitorValidator {
                     PUBLIC,
                     ABSTRACT,
                     FINAL,
-                    STRICTFP,
+                    STRICTFP, // JML
                     SEALED,
-                    NON_SEALED, // JML
+                    NON_SEALED,
                     JML_PURE,
                     JML_STRICTLY_PURE,
                     JML_NULLABLE,
@@ -174,9 +174,9 @@ public class ModifierValidator extends VisitorValidator {
                     ABSTRACT,
                     STATIC,
                     FINAL,
-                    STRICTFP,
+                    STRICTFP, // JML
                     SEALED,
-                    NON_SEALED, // JML
+                    NON_SEALED,
                     JML_PURE,
                     JML_STRICTLY_PURE,
                     JML_NULLABLE,
@@ -196,9 +196,9 @@ public class ModifierValidator extends VisitorValidator {
                     reporter,
                     ABSTRACT,
                     FINAL,
-                    STRICTFP,
+                    STRICTFP, // JML
                     SEALED,
-                    NON_SEALED, // JML
+                    NON_SEALED,
                     JML_PURE,
                     JML_STRICTLY_PURE,
                     JML_NULLABLE,
@@ -250,9 +250,9 @@ public class ModifierValidator extends VisitorValidator {
         validateModifiers(
                 n,
                 reporter,
-                PUBLIC,
+                PUBLIC, // JML
                 PROTECTED,
-                PRIVATE, // JML
+                PRIVATE,
                 JML_PURE,
                 JML_STRICTLY_PURE,
                 JML_NULLABLE,
@@ -360,9 +360,9 @@ public class ModifierValidator extends VisitorValidator {
                             ABSTRACT,
                             STATIC,
                             FINAL,
-                            SYNCHRONIZED,
+                            SYNCHRONIZED, // JML
                             NATIVE,
-                            STRICTFP, // JML
+                            STRICTFP,
                             JML_PURE,
                             JML_STRICTLY_PURE,
                             JML_NULLABLE,

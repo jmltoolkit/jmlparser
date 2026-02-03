@@ -316,7 +316,7 @@ class NoCommentHashCodeVisitorTest {
         ConstructorDeclaration node = spy(new ConstructorDeclaration());
         NoCommentHashCodeVisitor.hashCode(node);
 
-        verify(node, times(1)).getBody();
+        verify(node, times(2)).getBody();
         verify(node, times(1)).getModifiers();
         verify(node, times(1)).getName();
         verify(node, times(1)).getParameters();

@@ -2,6 +2,7 @@ package com.github.javaparser.ast.jml.doc;
 
 import static com.github.javaparser.utils.Utils.assertNotNull;
 
+import com.github.javaparser.GeneratedJavaParserConstants;
 import com.github.javaparser.JavaToken;
 import com.github.javaparser.TokenRange;
 import com.github.javaparser.ast.AllFieldsConstructor;
@@ -22,11 +23,19 @@ import org.jspecify.annotations.NonNull;
  */
 public class JmlDoc extends Node {
 
-    private JavaToken content;
+    private String content;
+
+    public JmlDoc(JavaToken content) {
+        this(new TokenRange(content, content), content.getText());
+    }
+
+    private static JavaToken getContent(JavaToken content) {
+        return content;
+    }
 
     @AllFieldsConstructor
-    public JmlDoc(JavaToken content) {
-        this(new TokenRange(content, content), content);
+    public JmlDoc(String content) {
+        this(null, content);
     }
 
     @Override
@@ -42,14 +51,14 @@ public class JmlDoc extends Node {
     }
 
     @Generated("com.github.javaparser.generator.core.node.PropertyGenerator")
-    public JavaToken getContent() {
+    public String getContent() {
         return content;
     }
 
     @Generated("com.github.javaparser.generator.core.node.PropertyGenerator")
-    public JmlDoc setContent(final @NonNull() JavaToken content) {
+    public JmlDoc setContent(final @NonNull() String content) {
         assertNotNull(content);
-        if (content == this.content) {
+        if (content.equals(this.content)) {
             return this;
         }
         notifyPropertyChange(ObservableProperty.CONTENT, this.content, content);
@@ -73,15 +82,28 @@ public class JmlDoc extends Node {
      * This constructor is used by the parser and is considered private.
      */
     @Generated("com.github.javaparser.generator.core.node.MainConstructorGenerator")
-    public JmlDoc(TokenRange tokenRange, JavaToken content) {
+    public JmlDoc(TokenRange tokenRange, String content) {
         super(tokenRange);
         setContent(content);
         customInitialization();
     }
 
+    public JmlDoc(TokenRange tokenRange, JavaToken content) {
+        this(tokenRange, content.getText());
+    }
+
     @com.github.javaparser.ast.key.IgnoreLexPrinting()
     @Generated("com.github.javaparser.generator.core.node.PropertyGenerator")
-    public @NonNull() JavaToken content() {
+    public @NonNull() String content() {
         return Objects.requireNonNull(content);
+    }
+
+    public JavaToken constructToken() {
+        final var tokenRange = getTokenRange();
+        if (tokenRange.isPresent()) {
+            assert (tokenRange.get().getBegin() == tokenRange.get().getEnd());
+            return tokenRange.get().getBegin();
+        }
+        return new JavaToken(GeneratedJavaParserConstants.JML_BLOCK_COMMENT, getContent());
     }
 }

@@ -433,7 +433,6 @@ public class TokenTypes {
             case NULL:
             case UNNAMED_PLACEHOLDER:
                 return JavaToken.Category.LITERAL;
-            case JMLIDENTIFIER:
             case SVIDENTIFIER:
             case IDENTIFIER:
             case JML_IDENTIFIER:

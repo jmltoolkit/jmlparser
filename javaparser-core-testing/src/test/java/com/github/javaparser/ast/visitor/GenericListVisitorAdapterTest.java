@@ -636,7 +636,7 @@ class GenericListVisitorAdapterTest {
 
         // Verify
         InOrder order = Mockito.inOrder(node);
-        order.verify(node).getBody();
+        order.verify(node, times(2)).getBody();
         order.verify(node).getModifiers();
         order.verify(node).getName();
         order.verify(node).getParameters();

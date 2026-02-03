@@ -30,6 +30,8 @@ import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.comments.Comment;
+import com.github.javaparser.ast.jml.doc.JmlDoc;
+import com.github.javaparser.ast.jml.doc.JmlDocModifier;
 import com.github.javaparser.metamodel.BaseNodeMetaModel;
 import com.github.javaparser.metamodel.PropertyMetaModel;
 import com.github.javaparser.utils.Log;
@@ -107,9 +109,15 @@ public class JavaParserJsonDeserializer {
                         parameters.put(name, Boolean.parseBoolean(nodeJson.getString(name)));
                     } else if (Enum.class.isAssignableFrom(type)) {
                         parameters.put(name, Enum.valueOf((Class<? extends Enum>) type, nodeJson.getString(name)));
-                    } else if (type == Modifier.DefaultKeyword.class) {
-                        // TODO weigl handle JmlDocModifier?
-                        parameters.put(name, Enum.valueOf(Modifier.DefaultKeyword.class, nodeJson.getString(name)));
+                    } else if (type == Modifier.Keyword.class) {
+                        Modifier.Keyword value;
+                        final var string = nodeJson.getString(name);
+                        try {
+                            value = Enum.valueOf(Modifier.DefaultKeyword.class, string);
+                        } catch (IllegalArgumentException e) {
+                            value = new JmlDocModifier(new NodeList<>(new JmlDoc(string)));
+                        }
+                        parameters.put(name, value);
                     } else {
                         throw new IllegalStateException("Don't know how to convert: " + type);
                     }

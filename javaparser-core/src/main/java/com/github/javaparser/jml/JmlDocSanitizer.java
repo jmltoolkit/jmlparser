@@ -54,7 +54,7 @@ public record JmlDocSanitizer(Set<String> enabledKeys) {
     }
 
     public String asString(NodeList<JmlDoc> jmlDocs, boolean emulateGlobalPosition) {
-        return asStringJT(jmlDocs.stream().map(JmlDoc::getContent).toList(), emulateGlobalPosition);
+        return asStringJT(jmlDocs.stream().map(JmlDoc::constructToken).toList(), emulateGlobalPosition);
     }
 
     public String toSanitizedString(StringBuilder s) {

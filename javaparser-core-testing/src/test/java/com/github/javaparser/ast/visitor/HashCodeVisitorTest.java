@@ -272,7 +272,7 @@ class HashCodeVisitorTest {
     void testVisitConstructorDeclaration() {
         ConstructorDeclaration node = spy(new ConstructorDeclaration());
         HashCodeVisitor.hashCode(node);
-        verify(node, times(1)).getBody();
+        verify(node, times(2)).getBody();
         verify(node, times(1)).getModifiers();
         verify(node, times(1)).getName();
         verify(node, times(1)).getParameters();
@@ -281,7 +281,8 @@ class HashCodeVisitorTest {
         verify(node, times(1)).getTypeParameters();
         verify(node, times(1)).getAnnotations();
         verify(node, times(1)).getComment();
-        //JML
+
+        // JML
         verify(node, times(1)).getContracts();
     }
 
@@ -300,7 +301,7 @@ class HashCodeVisitorTest {
         verify(node, times(1)).getBody();
         verify(node, times(1)).getCondition();
         verify(node, times(1)).getComment();
-        //JML
+        // JML
         verify(node, times(1)).getContracts();
     }
 
@@ -398,7 +399,7 @@ class HashCodeVisitorTest {
         verify(node, times(1)).getIterable();
         verify(node, times(1)).getVariable();
         verify(node, times(1)).getComment();
-        //JML
+        // JML
         verify(node, times(1)).getContracts();
     }
 
@@ -497,7 +498,7 @@ class HashCodeVisitorTest {
         verify(node, times(1)).isEnclosingParameters();
         verify(node, times(1)).getParameters();
         verify(node, times(1)).getComment();
-        //JML
+        // JML
         verify(node, times(1)).getContracts();
     }
 
@@ -575,7 +576,7 @@ class HashCodeVisitorTest {
         verify(node, times(1)).getTypeParameters();
         verify(node, times(1)).getAnnotations();
         verify(node, times(1)).getComment();
-        //JML
+        // JML
         verify(node, times(1)).getContracts();
     }
 

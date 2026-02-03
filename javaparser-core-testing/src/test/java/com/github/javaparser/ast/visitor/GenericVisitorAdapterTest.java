@@ -634,7 +634,7 @@ public class GenericVisitorAdapterTest {
 
         // Verify
         InOrder order = Mockito.inOrder(node);
-        order.verify(node).getBody();
+        order.verify(node, times(2)).getBody();
         order.verify(node).getModifiers();
         order.verify(node).getName();
         order.verify(node).getParameters();
@@ -1831,7 +1831,6 @@ public class GenericVisitorAdapterTest {
         // When
         Mockito.when(node.getTypeName()).thenReturn(Optional.of(mock(Name.class)));
         Mockito.when(node.getComment()).thenReturn(Optional.of(mock(Comment.class)));
-
 
         // Then
         Object result = visitor.visit(node, argument);
