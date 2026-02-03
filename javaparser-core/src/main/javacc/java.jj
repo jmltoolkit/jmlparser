@@ -3530,7 +3530,7 @@ String Identifier():
         // Make sure older Java versions parse
         <ENUM> | <STRICTFP> | <YIELD> | <RECORD> | <PERMITS> | <SEALED> | <WHEN> | "_" | <ASSERT> |
         // overwritten by Key/SV but still valid in Java
-        "model" | "ghost" | "two_state" | "no_state" | "source" | "merge_point" | "exec" | "ccatch" | "ccat"
+        "source" | "exec" | "ccatch" | "ccat"
         // or a bunch of JML clause words
         | <INVARIANT> | <ABRUPT_BEHAVIOR> | <ABRUPT_BEHAVIOUR> | <ACCESSIBLE> | <ACCESSIBLE_REDUNDANTLY>
         | <MODEL_BEHAVIOR> | <MODEL_BEHAVIOUR>

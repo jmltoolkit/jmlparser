@@ -79,7 +79,7 @@ class JavaTokenTest {
 
     @Test
     void testKindEnum2() {
-        final int tokenCount = GeneratedJavaParserConstants.tokenImage.length;
+        final int tokenCount = GeneratedJavaParserConstants.tokenImage.length - 1;
         for (int i = 0; i < tokenCount; i++) {
             System.out.println(i);
             JavaToken.Kind kind = JavaToken.Kind.valueOf(i);

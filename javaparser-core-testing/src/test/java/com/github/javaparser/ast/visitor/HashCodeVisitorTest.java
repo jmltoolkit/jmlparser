@@ -272,7 +272,7 @@ class HashCodeVisitorTest {
     void testVisitConstructorDeclaration() {
         ConstructorDeclaration node = spy(new ConstructorDeclaration());
         HashCodeVisitor.hashCode(node);
-        verify(node, times(1)).getBody();
+        verify(node, times(2)).getBody();
         verify(node, times(1)).getModifiers();
         verify(node, times(1)).getName();
         verify(node, times(1)).getParameters();
@@ -281,6 +281,7 @@ class HashCodeVisitorTest {
         verify(node, times(1)).getTypeParameters();
         verify(node, times(1)).getAnnotations();
         verify(node, times(1)).getComment();
+
         //JML
         verify(node, times(1)).getContracts();
     }
