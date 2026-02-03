@@ -186,7 +186,7 @@ public class NodeList<N extends Node>
     /**
      * Inserts the node before all other nodes.
      */
-    public NodeList<N> addFirstO(N node) {
+    public NodeList<N> addNFirst(N node) {
         add(0, node);
         return this;
     }
@@ -194,7 +194,7 @@ public class NodeList<N extends Node>
     /**
      * Inserts the node after all other nodes. (This is simply an alias for add.)
      */
-    public NodeList<N> addLastO(N node) {
+    public NodeList<N> addNLast(N node) {
         add(node);
         return this;
     }
