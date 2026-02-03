@@ -1,4 +1,4 @@
-name: Build and test (using maven)
+name: Tests
 
 #on: [push, pull_request]
 #on: [pull_request]
@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - master
+      - devel
     paths-ignore:
       - '**.md'
 
@@ -57,19 +58,18 @@ jobs:
           distribution: 'zulu'              # v2 requires explicitly stating the distribution - `zulu` and `adopt` supported at time of writing
           java-version: ${{ matrix.jdk }}   # Use matrix to select which JDK level to use
           java-package: jdk                 # optional (jdk or jre) - defaults to jdk
+          cache: 'maven'
 
       ## Given that the build matrix only specifies the major version (configurable), output the precise version used.
       - name: Echo exact java version being used
         run: java -version
 
-      ## Use a cache to reduce the build/test times (avoids having to download dependencies on EVERY run).
-      ### https://help.github.com/en/actions/language-and-framework-guides/building-and-testing-java-with-maven#caching-dependencies
-      - name: Cache Maven packages
+      - name: Cache SonarCloud packages
         uses: actions/cache@v5
         with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
 
 
       ## Actually perform the tests. Unsuccessful tests will indicate a failed build.
